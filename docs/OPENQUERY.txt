@@ -1,0 +1,29 @@
+OPENQUERY
+
+1. DateTime
+2. F14_ZoloSystem.Control_Rack_Temp
+3. F14_ZoloSystem.Ref_O2_Laser_Power
+4. F14_ZoloSystem.Ref_H2O_Laser_Power
+5. F14_ZoloSystem..Ref_CO_Laser_Power
+6. Path01_14.CatchTemp
+7. Path01_14.CO_Concentration
+8. Path01_14.H2O_Concentration
+9. Path01_14.O2_Concentration
+10. Path01_14.PitchTemp
+11. Path01_14.SignalStrength
+12. Path01_14.Status
+13. Path01_14.TempF
+
+1. Date/Time stamp of when data is saved in database (NOT from ZoloScan system)
+2. Control_Rack_Temp(C): -99.9 to 99.9 Provide temperature of the Control Rack Alarm operator if over 30C Alarm operator if under 10C
+3. Ref_O2_Laser_Power: 0 to 999.9 Provide reference O2 Laser Power. Alarm operator if power drops below 40, O2 results are no longer valid
+4. Ref_H2O_Laser_Power: 0 to 999.9 Provide reference H2O/Temp Laser Power. Alarm operator if power drops below 50, constituent and Temperature results are no longer valid
+5. Ref_CO_Laser_Power: 0 to 999.9 Provide reference CO Laser Power. Alarm operator if power drops below 50, CO results are no longer valid
+6. path[A]_CatchTemp: -99.9 to 99.9 Provide temperature of the Catch Head in Celsius Head cooling is recommended for temperatures > 55 Celsius (max 85C)
+7. path[A]_CO_Concentration: 0 to 99.9 % Carbon Monoxide concentration (wet) of a path
+8. path[A]_H2O_Concentration: 0 to 99.9 % Water concentration (wet) of a path
+9. path[A]_O2_Concentration: 0 to 99.9 % Oxygen concentration (wet) or a path
+10. path[A]_PitchTemp: -99.9 to 99.9 Provide temperature of the Pitch Head in Celsius Head cooling is recommended for temperatures > 55 Celsius (max 85C)
+11. path[A]_SignalStrength: 0 to 99.9 Provides an indicator of the signal strength of a path. Path maintenance is recommended when a path signal falls below < 30.
+12. path[A]_Status:
+13. path[A]_Temp(F): 0 to 3000 Temperature of a path in Fahrenheit

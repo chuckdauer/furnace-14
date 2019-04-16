@@ -1,0 +1,67 @@
+//Imports
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+//Variables
+$font-stack: 'Open Sans', sans-serif;
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+$small: 10px;
+$medium: 14px;
+$large: 22px;
+$x-large: 36px;
+$color-main: #000000;
+$color-accent: #ff0000;
+
+body {
+	font-family: $font-stack;
+	font-size: $medium;
+	font-weight: $normal;
+	color: $color-main;
+}
+.header {
+	position: relative;
+	display: block;
+	text-align: center;
+	padding-top:25px;
+	margin-bottom: 50px;
+	
+	.logo {
+		width: 300px;
+		height: auto;
+	}
+}
+
+.furnace {
+	position: relative;
+	display: grid;
+	
+	.chart-containers {
+		position: relative;
+		text-align: center;
+		
+		.chart {
+			display: inline-block;
+			width: 275px;
+			height: 275px;
+			margin: auto;
+		}
+	}
+}
+
+.footer {
+	position: relative;
+	text-align: center;
+	padding-bottom: 25px;
+	margin-top:50px;
+	
+	.logo {
+		width: 200px;
+		height: auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
