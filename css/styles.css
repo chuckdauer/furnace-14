@@ -1,43 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 400;
   color: #000000; }
+
+a, a:active, a:hover, a:visited {
+  color: #000000;
+  text-decoration: none; }
 
 .header {
   position: relative;
   display: block;
   text-align: center;
-  padding-top: 25px;
-  margin-bottom: 50px; }
+  padding-top: 2em;
+  margin-bottom: 3em; }
   .header .logo {
-    width: 300px;
-    height: auto; }
+    width: 645px;
+    height: 112px; }
 
-.furnace {
-  position: relative;
-  display: grid; }
-  .furnace .chart-containers {
-    position: relative;
-    text-align: center; }
-    .furnace .chart-containers .chart {
-      display: inline-block;
-      width: 275px;
-      height: 275px;
-      margin: auto; }
+.gauges-furnace .gauges hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 50%;
+  text-align: center; }
+.gauges-furnace .gauges p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75em;
+  color: #CDD2E1;
+  transform: rotate(-90deg);
+  margin: 3% 0 0 -5%; }
+.gauges-furnace .gauges .path:hover {
+  cursor: pointer; }
+.gauges-furnace .gauges .path .chart {
+  height: 100px;
+  width: 15%;
+  display: inline-block; }
+.gauges-furnace .furnace #furnace14 img {
+  height: auto;
+  width: auto; }
+.gauges-furnace .furnace #furnace14 .figure-caption {
+  position: absolute;
+  top: 100%;
+  left: 25%; }
 
 .footer {
   position: relative;
   text-align: center;
-  padding-bottom: 25px;
-  margin-top: 50px; }
-  .footer .logo {
-    width: 200px;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+  padding-bottom: 1em;
+  margin-top: 3em; }
+  .footer p {
+    font-size: 0.75em; }
 
 /*# sourceMappingURL=styles.css.map */

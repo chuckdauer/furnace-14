@@ -2,17 +2,20 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 //Variables
+$base-spacing: 1em;
 $font-stack: 'Open Sans', sans-serif;
 $light: 300;
 $normal: 400;
 $semibold: 500;
 $bold: 700;
-$small: 10px;
-$medium: 14px;
-$large: 22px;
-$x-large: 36px;
+$small: .75em;
+$medium: 1em;
+$large: 2em;
+$x-large: 3em;
 $color-main: #000000;
-$color-accent: #ff0000;
+$color-mute: #CDD2E1;
+$color-bg: #ffffff;
+$a-tags: 'a, a:active, a:hover, a:visited';
 
 body {
 	font-family: $font-stack;
@@ -20,32 +23,74 @@ body {
 	font-weight: $normal;
 	color: $color-main;
 }
+
+#{$a-tags} {
+	color: $color-main;
+	text-decoration: none;
+}
+
 .header {
 	position: relative;
 	display: block;
 	text-align: center;
-	padding-top:25px;
-	margin-bottom: 50px;
+	padding-top: $large;
+	margin-bottom: $x-large;
 	
 	.logo {
-		width: 300px;
-		height: auto;
+		width: 645px;
+		height: 112px;
 	}
 }
 
-.furnace {
-	position: relative;
-	display: grid;
+.gauges-furnace {
 	
-	.chart-containers {
-		position: relative;
-		text-align: center;
+	.gauges { //col
 		
-		.chart {
-			display: inline-block;
-			width: 275px;
-			height: 275px;
-			margin: auto;
+		hr {
+			border: 0;
+			height: 0;
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			width: 50%;
+			text-align: center;
+		}
+		
+		p {
+			font-family: $font-stack;
+			font-size: $small;
+			color: $color-mute;
+			transform: rotate(-90deg);
+			margin: 3% 0 0 -5%;
+		}
+		
+		.path { //row
+			
+			&:hover {
+				cursor: pointer;
+			}
+			
+			.chart {
+				height: 100px;
+				width: 15%;
+				display: inline-block;
+			}
+		}
+	}
+	
+	.furnace { //col
+		
+		#furnace14 { //row
+			
+			img {
+				height: auto;
+				width: auto;
+			}
+			
+			.figure-caption {
+				position: absolute;
+				top: 100%;
+				left: 25%;
+			}
 		}
 	}
 }
@@ -53,15 +98,10 @@ body {
 .footer {
 	position: relative;
 	text-align: center;
-	padding-bottom: 25px;
-	margin-top:50px;
+	padding-bottom: $medium;
+	margin-top: $x-large;
 	
-	.logo {
-		width: 200px;
-		height: auto;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	p {
+		font-size: $small;
 	}
 }

@@ -27,3 +27,23 @@ OPENQUERY
 11. path[A]_SignalStrength: 0 to 99.9 Provides an indicator of the signal strength of a path. Path maintenance is recommended when a path signal falls below < 30.
 12. path[A]_Status:
 13. path[A]_Temp(F): 0 to 3000 Temperature of a path in Fahrenheit
+
+----------------------------------------------------------------------------------------------------------------------------
+
+SELECT id, DTS, Path01_14CO_Concentration, Path01_14H2O_Concentration, Path01_14O2_Concentration, Path01_14TempF FROM OPENQUERY ORDER BY DTS DESC LIMIT 1
+
+CREATE EVENT update_openquery
+ON SCHEDULE EVERY 60 SECOND 
+ON COMPLETION PRESERVE ENABLE
+DO INSERT INTO furnace14.OPENQUERY (DTS, Path01_14CO_Concentration, Path01_14H2O_Concentration, Path01_14O2_Concentration, Path01_14TempF)
+VALUES (DATE_FORMAT(NOW(), '%c'"/"'%m'"/"'%y'" "'%T'), ROUND((RAND() * (5000-100))+100), ROUND((RAND() * (99.9-1))+1), ROUND((RAND() * (99.9-1))+1), ROUND((RAND() * (2500-1))+1))
+
+SET GLOBAL event_scheduler = ON
+
+SHOW EVENTS
+
+DROP EVENT update_openquery
+
+SELECT DATE_FORMAT(NOW(), '%c'"/"'%m'"/"'%y'" "'%T')
+
+
