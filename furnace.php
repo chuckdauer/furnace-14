@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
     <!-- Bootstrap + jQuery -->
-	<script src="js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
 	<!-- Highcharts library -->
 	<script src="js/highcharts.js"></script>
 	<script src="js/highcharts-more.js"></script>
