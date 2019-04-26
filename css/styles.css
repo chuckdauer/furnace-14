@@ -38,9 +38,6 @@ a, a:active, a:hover, a:visited {
   height: 100px;
   width: 15%;
   display: inline-block; }
-.gauges-furnace .furnace #furnace14 img {
-  height: auto;
-  width: auto; }
 .gauges-furnace .furnace #furnace14 .figure-caption {
   position: absolute;
   top: 100%;
