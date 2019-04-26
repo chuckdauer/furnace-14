@@ -21,55 +21,38 @@
 	<link rel="stylesheet" href="css/styles.css">
 	
     <title>Furnace 14 | ZoloScan</title>
-	<script>
-		// Pre-load images
-		window.onload = function() {
-			setTimeout(function() {
-				new Image().src = "img/furnace-14-01.png";
-				new Image().src = "img/furnace-14-02.png";
-				new Image().src = "img/furnace-14-03.png";
-				new Image().src = "img/furnace-14-04.png";
-				new Image().src = "img/furnace-14-05.png";
-				new Image().src = "img/furnace-14-06.png";
-				new Image().src = "img/furnace-14-07.png";
-				new Image().src = "img/furnace-14-08.png";
-				new Image().src = "img/furnace-14-09.png";
-				new Image().src = "img/furnace-14-10.png";
-				new Image().src = "img/furnace-14-11.png";
-				new Image().src = "img/furnace-14-12.png";
-				new Image().src = "img/furnace-14-13.png";
-				new Image().src = "img/furnace-14-14.png";
-				new Image().src = "img/furnace-14-15.png";
-				new Image().src = "img/furnace-14-16.png";
-				new Image().src = "img/furnace-14-17.png";
-				new Image().src = "img/furnace-14-18.png";
-				new Image().src = "img/furnace-14-19.png";
-				new Image().src = "img/furnace-14-20.png";
-			}, 1000);
-		};
-		
-		// Image swap on path rollover
-		$(document).ready(function(){
-			$('#path-01, #path-02, #path-03, #path-04, #path-05, #path-06, #path-07, #path-08, #path-09, #path-10, #path-11, #path-12, #path-13, #path-14, #path-15, #path-16, #path-17, #path-18, #path-19, #path-20').on('mouseenter', function() {
-			    var newSrc = $(this).attr('data-src');
-			    var img = $('#furnace-empty');
-			    img.attr('data-orSrc', img.attr('src'));
-			    img.attr('src',newSrc);
-			}).on('mouseleave', function() {
-			    var img = $('#furnace-empty');
-			    img.attr('src',img.attr('data-orSrc'));
-			});
-			
-	  	  // Reload guages
-	  	  $(function() {
-	  	      function callAjax(){
-	  	          $('#gauges-1-10').load("1-10-data.php");
-				  $('#gauges-11-20').load("11-20-data.php");
-	  	      }
-	  	      setInterval(callAjax, 60000 );
-	  	  });
+  	<script>		
+  		// Image swap on path rollover
+		  		$(document).ready(function(){
+					function preload(arrayOfImages) {
+					    $(arrayOfImages).each(function(){
+					        $('<img/>')[0].src = this;
+					    });
+					}
+					preload([
+						'img/furnace-14-01.png',
+						'img/furnace-14-02.png',
+						'img/furnace-14-03.png',
+						'img/furnace-14-04.png',
+						'img/furnace-14-05.png',
+						'img/furnace-14-06.png',
+						'img/furnace-14-07.png',
+						'img/furnace-14-08.png',
+						'img/furnace-14-09.png',
+						'img/furnace-14-10.png',
+						'img/furnace-14-11.png',
+						'img/furnace-14-12.png',
+						'img/furnace-14-13.png',
+						'img/furnace-14-14.png',
+						'img/furnace-14-15.png',
+						'img/furnace-14-16.png',
+						'img/furnace-14-17.png',
+						'img/furnace-14-18.png',
+						'img/furnace-14-19.png',
+						'img/furnace-14-20.png'
+					]);
 		});
-	</script>
+  	</script>
   </head>
   <body>
 	  <!-- Header -->
@@ -84,30 +67,7 @@
 	  <div class="container-fluid gauges-furnace">
 		  <div class="row">
 		  <!-- Left: Gauges -->
-		  <div class="col-4 gauges" id="gauges-1-10">
-			<?php
-				//Database to JSON
-				$servername = "localhost";
-				$database = "furnace14";
-				$username = "chuck";
-				$password = "root";
-
-				try {
-					$pdo = new PDO("mysql:dbname=$database;host=$servername", $username, $password);
-					$statement = $pdo->prepare("SELECT Path01_14CO_Concentration, Path01_14H2O_Concentration, Path01_14O2_Concentration, Path01_14TempF, Path02_14CO_Concentration, Path02_14H2O_Concentration, Path02_14O2_Concentration, Path02_14TempF, Path03_14CO_Concentration, Path03_14H2O_Concentration, Path03_14O2_Concentration, Path03_14TempF, Path04_14CO_Concentration, Path04_14H2O_Concentration, Path04_14O2_Concentration, Path04_14TempF, Path05_14CO_Concentration, Path05_14H2O_Concentration, Path05_14O2_Concentration, Path05_14TempF, Path06_14CO_Concentration, Path06_14H2O_Concentration, Path06_14O2_Concentration, Path06_14TempF, Path07_14CO_Concentration, Path07_14H2O_Concentration, Path07_14O2_Concentration, Path07_14TempF, Path08_14CO_Concentration, Path08_14H2O_Concentration, Path08_14O2_Concentration, Path08_14TempF, Path09_14CO_Concentration, Path09_14H2O_Concentration, Path09_14O2_Concentration, Path09_14TempF, Path10_14CO_Concentration, Path10_14H2O_Concentration, Path10_14O2_Concentration, Path10_14TempF FROM OPENQUERY ORDER BY id DESC LIMIT 1");
-					$statement->execute();
-					$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-					$json = json_encode($results, JSON_NUMERIC_CHECK);
-				  }
-				catch(PDOException $e)
-				  {
-				  	echo "Connection failed: " . $e->getMessage();
-				  }
-
-				$conn = null;
-
-				$data = json_decode($json, true);
-			?>
+		  <div class="col-4 gauges">
 			<hr>
 			<div class="row justify-content-center path" id="path-01" data-src="img/furnace-14-01.png">
 				<p>PATH01</p><div id="path01-temp" class="chart"></div><div id="path01-co" class="chart"></div><div id="path01-h2o" class="chart"></div><div id="path01-o2" class="chart"></div>	
@@ -149,6 +109,30 @@
 				<p>PATH10</p><div id="path10-temp" class="chart"></div><div id="path10-co" class="chart"></div><div id="path10-h2o" class="chart"></div><div id="path10-o2" class="chart"></div>	
 			</div>
 			<hr>
+			<div id="gauges-1-10">
+			<?php
+				//Database to JSON
+				$servername = "localhost";
+				$database = "furnace14";
+				$username = "chuck";
+				$password = "root";
+
+				try {
+					$pdo = new PDO("mysql:dbname=$database;host=$servername", $username, $password);
+					$statement = $pdo->prepare("SELECT Path01_14CO_Concentration, Path01_14H2O_Concentration, Path01_14O2_Concentration, Path01_14TempF, Path02_14CO_Concentration, Path02_14H2O_Concentration, Path02_14O2_Concentration, Path02_14TempF, Path03_14CO_Concentration, Path03_14H2O_Concentration, Path03_14O2_Concentration, Path03_14TempF, Path04_14CO_Concentration, Path04_14H2O_Concentration, Path04_14O2_Concentration, Path04_14TempF, Path05_14CO_Concentration, Path05_14H2O_Concentration, Path05_14O2_Concentration, Path05_14TempF, Path06_14CO_Concentration, Path06_14H2O_Concentration, Path06_14O2_Concentration, Path06_14TempF, Path07_14CO_Concentration, Path07_14H2O_Concentration, Path07_14O2_Concentration, Path07_14TempF, Path08_14CO_Concentration, Path08_14H2O_Concentration, Path08_14O2_Concentration, Path08_14TempF, Path09_14CO_Concentration, Path09_14H2O_Concentration, Path09_14O2_Concentration, Path09_14TempF, Path10_14CO_Concentration, Path10_14H2O_Concentration, Path10_14O2_Concentration, Path10_14TempF FROM OPENQUERY ORDER BY id DESC LIMIT 1");
+					$statement->execute();
+					$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+					$json = json_encode($results, JSON_NUMERIC_CHECK);
+				  }
+				catch(PDOException $e)
+				  {
+				  	echo "Connection failed: " . $e->getMessage();
+				  }
+
+				$conn = null;
+
+				$data = json_decode($json, true);
+			?>
 			<script>
 				var gaugeOptions = {
 					chart: {
@@ -180,9 +164,9 @@
 					// the value axis
 					yAxis: {
 						stops: [
-					  [0.1, '#55BF3B'], // green
-					  [0.5, '#DDDF0D'], // yellow
-					  [0.9, '#DF5353'] // red
+						  [0.1, '#55BF3B'], // green
+						  [0.5, '#DDDF0D'], // yellow
+						  [0.9, '#DF5353'] // red
 						],
 						lineWidth: 0,
 						minorTickInterval: null,
@@ -205,6 +189,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -231,6 +218,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -257,6 +247,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -283,6 +276,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -311,6 +307,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -337,6 +336,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -363,6 +365,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -389,6 +394,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -417,6 +425,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -443,6 +454,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -469,6 +483,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -495,6 +512,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -523,6 +543,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -549,6 +572,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -575,6 +601,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -601,6 +630,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -629,6 +661,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -655,6 +690,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -681,6 +719,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -707,6 +748,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -735,6 +779,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -761,6 +808,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -787,6 +837,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -813,6 +866,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -841,6 +897,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -867,6 +926,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -893,6 +955,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -919,6 +984,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -947,6 +1015,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -973,6 +1044,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -999,6 +1073,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1025,6 +1102,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1053,6 +1133,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1079,6 +1162,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1105,6 +1191,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1131,6 +1220,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1159,6 +1251,9 @@
 						max: 2500,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1185,6 +1280,9 @@
 						max: 5000,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1211,6 +1309,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1237,6 +1338,9 @@
 						max: 99.9,
 						title: {
 							text: ''
+						},
+						labels: {
+							enabled: false
 						}
 					},
 					credits: {
@@ -1258,6 +1362,7 @@
 				// o2 gauge
 				//path10
 				</script>
+			</div>
 		  </div>
 		  <!-- Left: Gauges -->
 		  <!-- Right: Furnace -->
@@ -1274,30 +1379,7 @@
 			</div>
 		    <!-- Right: Furnace -->
 			<!-- Gauges 11-20 -->
-			<div class="col-4 gauges" id="gauges-11-20">
-			<?php
-				//Database to JSON
-				$servername = "localhost";
-				$database = "furnace14";
-				$username = "chuck";
-				$password = "root";
-
-				try {
-					$pdo = new PDO("mysql:dbname=$database;host=$servername", $username, $password);
-					$statement = $pdo->prepare("SELECT Path11_14CO_Concentration, Path11_14H2O_Concentration, Path11_14O2_Concentration, Path11_14TempF, Path12_14CO_Concentration, Path12_14H2O_Concentration, Path12_14O2_Concentration, Path12_14TempF, Path13_14CO_Concentration, Path13_14H2O_Concentration, Path13_14O2_Concentration, Path13_14TempF, Path14_14CO_Concentration, Path14_14H2O_Concentration, Path14_14O2_Concentration, Path14_14TempF, Path15_14CO_Concentration, Path15_14H2O_Concentration, Path15_14O2_Concentration, Path15_14TempF, Path16_14CO_Concentration, Path16_14H2O_Concentration, Path16_14O2_Concentration, Path16_14TempF, Path17_14CO_Concentration, Path17_14H2O_Concentration, Path17_14O2_Concentration, Path17_14TempF, Path18_14CO_Concentration, Path18_14H2O_Concentration, Path18_14O2_Concentration, Path18_14TempF, Path19_14CO_Concentration, Path19_14H2O_Concentration, Path19_14O2_Concentration, Path19_14TempF, Path20_14CO_Concentration, Path20_14H2O_Concentration, Path20_14O2_Concentration, Path20_14TempF FROM OPENQUERY ORDER BY id DESC LIMIT 1");
-					$statement->execute();
-					$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-					$json = json_encode($results, JSON_NUMERIC_CHECK);
-				  }
-				catch(PDOException $e)
-				  {
-				  	echo "Connection failed: " . $e->getMessage();
-				  }
-
-				$conn = null;
-
-				$data = json_decode($json, true);
-			?>
+			<div class="col-4 gauges">
 			<hr>
 			<div class="row justify-content-center path" id="path-11" data-src="img/furnace-14-11.png">
 				<p>PATH11</p><div id="path11-temp" class="chart"></div><div id="path11-co" class="chart"></div><div id="path11-h2o" class="chart"></div><div id="path11-o2" class="chart"></div>	
@@ -1339,6 +1421,30 @@
 				<p>PATH20</p><div id="path20-temp" class="chart"></div><div id="path20-co" class="chart"></div><div id="path20-h2o" class="chart"></div><div id="path20-o2" class="chart"></div>	
 			</div>
 			<hr>
+			<div id="gauges-11-20">
+			<?php
+				//Database to JSON
+				$servername = "localhost";
+				$database = "furnace14";
+				$username = "chuck";
+				$password = "root";
+
+				try {
+					$pdo = new PDO("mysql:dbname=$database;host=$servername", $username, $password);
+					$statement = $pdo->prepare("SELECT Path11_14CO_Concentration, Path11_14H2O_Concentration, Path11_14O2_Concentration, Path11_14TempF, Path12_14CO_Concentration, Path12_14H2O_Concentration, Path12_14O2_Concentration, Path12_14TempF, Path13_14CO_Concentration, Path13_14H2O_Concentration, Path13_14O2_Concentration, Path13_14TempF, Path14_14CO_Concentration, Path14_14H2O_Concentration, Path14_14O2_Concentration, Path14_14TempF, Path15_14CO_Concentration, Path15_14H2O_Concentration, Path15_14O2_Concentration, Path15_14TempF, Path16_14CO_Concentration, Path16_14H2O_Concentration, Path16_14O2_Concentration, Path16_14TempF, Path17_14CO_Concentration, Path17_14H2O_Concentration, Path17_14O2_Concentration, Path17_14TempF, Path18_14CO_Concentration, Path18_14H2O_Concentration, Path18_14O2_Concentration, Path18_14TempF, Path19_14CO_Concentration, Path19_14H2O_Concentration, Path19_14O2_Concentration, Path19_14TempF, Path20_14CO_Concentration, Path20_14H2O_Concentration, Path20_14O2_Concentration, Path20_14TempF FROM OPENQUERY ORDER BY id DESC LIMIT 1");
+					$statement->execute();
+					$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+					$json = json_encode($results, JSON_NUMERIC_CHECK);
+				  }
+				catch(PDOException $e)
+				  {
+				  	echo "Connection failed: " . $e->getMessage();
+				  }
+
+				$conn = null;
+
+				$data = json_decode($json, true);
+			?>
 				<script>
 					var gaugeOptions = {
 						chart: {
@@ -1395,7 +1501,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1421,7 +1530,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1447,7 +1559,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1473,7 +1588,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1501,7 +1619,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1527,7 +1648,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1553,7 +1677,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1579,7 +1706,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1607,7 +1737,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1633,7 +1766,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1659,7 +1795,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1685,7 +1824,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1713,7 +1855,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1739,7 +1884,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1765,7 +1913,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1791,7 +1942,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1819,7 +1973,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1845,7 +2002,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1871,7 +2031,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1897,7 +2060,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1925,7 +2091,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1951,7 +2120,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1977,7 +2149,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2003,7 +2178,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2031,7 +2209,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2057,7 +2238,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2083,7 +2267,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2109,7 +2296,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2137,7 +2327,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2163,7 +2356,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2189,7 +2385,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2215,7 +2414,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2243,7 +2445,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2269,7 +2474,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2295,7 +2503,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2321,7 +2532,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2349,7 +2563,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2375,7 +2592,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2401,7 +2621,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2427,7 +2650,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -2448,6 +2674,7 @@
 					// o2 gauge
 					//path20
 				</script>
+				</div>
 			</div>	
 		  </div>
 	  </div>
@@ -2460,3 +2687,26 @@
 		  </div>
 	  </div>
 	  <!-- Footer -->
+	<script>
+		// $('#path-01, #path-02, #path-03, #path-04, #path-05, #path-06, #path-07, #path-08, #path-09, #path-10, #path-11, #path-12, #path-13, #path-14, #path-15, #path-16, #path-17, #path-18, #path-19, #path-20').on('mouseenter', function() {
+			$('.path').on('mouseenter', function() {
+		    	var newSrc = $(this).attr('data-src');
+		    	var img = $('#furnace-empty');
+		    	img.attr('data-orSrc', img.attr('src'));
+		    	img.attr('src',newSrc);
+			})
+			$('.path').on('mouseleave', function() {
+		    	var img = $('#furnace-empty');
+		    	img.attr('src',img.attr('data-orSrc'));
+			});
+		
+	  	  // Reload guages
+	  	  $(document).ready(function() 
+			{function callAjax(){
+			  	$('#gauges-1-10').load("1-10-data.php"), $('#gauges-11-20').load("11-20-data.php");				
+			  };
+		  setInterval(callAjax, 60000 );
+	  });
+	</script>
+  </body>
+  </html>

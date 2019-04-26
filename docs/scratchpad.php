@@ -2,6 +2,36 @@
 
 ----------------------------------------------------------------------------------------------------------------------------
 
+Image preloader:
+
+// Pre-load images
+window.onload = function() {
+	setTimeout(function() {
+		new Image().src = "img/furnace-14-01.png";
+		new Image().src = "img/furnace-14-02.png";
+		new Image().src = "img/furnace-14-03.png";
+		new Image().src = "img/furnace-14-04.png";
+		new Image().src = "img/furnace-14-05.png";
+		new Image().src = "img/furnace-14-06.png";
+		new Image().src = "img/furnace-14-07.png";
+		new Image().src = "img/furnace-14-08.png";
+		new Image().src = "img/furnace-14-09.png";
+		new Image().src = "img/furnace-14-10.png";
+		new Image().src = "img/furnace-14-11.png";
+		new Image().src = "img/furnace-14-12.png";
+		new Image().src = "img/furnace-14-13.png";
+		new Image().src = "img/furnace-14-14.png";
+		new Image().src = "img/furnace-14-15.png";
+		new Image().src = "img/furnace-14-16.png";
+		new Image().src = "img/furnace-14-17.png";
+		new Image().src = "img/furnace-14-18.png";
+		new Image().src = "img/furnace-14-19.png";
+		new Image().src = "img/furnace-14-20.png";
+	}, 1000);
+};
+
+----------------------------------------------------------------------------------------------------------------------------
+
 PDO PHP DB:
 
 <?php

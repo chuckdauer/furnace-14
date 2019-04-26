@@ -1,3 +1,44 @@
+			<!-- <hr>
+			<div class="row justify-content-center path" id="path-11" data-src="img/furnace-14-11.png">
+				<p>PATH11</p><div id="path11-temp" class="chart"></div><div id="path11-co" class="chart"></div><div id="path11-h2o" class="chart"></div><div id="path11-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-12" data-src="img/furnace-14-12.png">
+				<p>PATH12</p><div id="path12-temp" class="chart"></div><div id="path12-co" class="chart"></div><div id="path12-h2o" class="chart"></div><div id="path12-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-13" data-src="img/furnace-14-13.png">
+				<p>PATH13</p><div id="path13-temp" class="chart"></div><div id="path13-co" class="chart"></div><div id="path13-h2o" class="chart"></div><div id="path13-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-14" data-src="img/furnace-14-14.png">
+				<p>PATH14</p><div id="path14-temp" class="chart"></div><div id="path14-co" class="chart"></div><div id="path14-h2o" class="chart"></div><div id="path14-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-15" data-src="img/furnace-14-15.png">
+				<p>PATH15</p><div id="path15-temp" class="chart"></div><div id="path15-co" class="chart"></div><div id="path15-h2o" class="chart"></div><div id="path15-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-16" data-src="img/furnace-14-16.png">
+				<p>PATH16</p><div id="path16-temp" class="chart"></div><div id="path16-co" class="chart"></div><div id="path16-h2o" class="chart"></div><div id="path16-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-17" data-src="img/furnace-14-17.png">
+				<p>PATH17</p><div id="path17-temp" class="chart"></div><div id="path17-co" class="chart"></div><div id="path17-h2o" class="chart"></div><div id="path17-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-18" data-src="img/furnace-14-18.png">
+				<p>PATH18</p><div id="path18-temp" class="chart"></div><div id="path18-co" class="chart"></div><div id="path18-h2o" class="chart"></div><div id="path18-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-19" data-src="img/furnace-14-19.png">
+				<p>PATH19</p><div id="path19-temp" class="chart"></div><div id="path19-co" class="chart"></div><div id="path19-h2o" class="chart"></div><div id="path19-o2" class="chart"></div>
+			</div>
+			<hr>
+			<div class="row justify-content-center path" id="path-20" data-src="img/furnace-14-20.png">
+				<p>PATH20</p><div id="path20-temp" class="chart"></div><div id="path20-co" class="chart"></div><div id="path20-h2o" class="chart"></div><div id="path20-o2" class="chart"></div>
+			</div>
+			<hr> -->
 			<?php
 				//Database to JSON
 				$servername = "localhost";
@@ -21,47 +62,6 @@
 
 				$data = json_decode($json, true);
 			?>
-			<hr>
-			<div class="row justify-content-center path" id="path-11" data-src="img/furnace-14-11.png">
-				<p>PATH11</p><div id="path11-temp" class="chart"></div><div id="path11-co" class="chart"></div><div id="path11-h2o" class="chart"></div><div id="path11-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-12" data-src="img/furnace-14-12.png">
-				<p>PATH12</p><div id="path12-temp" class="chart"></div><div id="path12-co" class="chart"></div><div id="path12-h2o" class="chart"></div><div id="path12-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-13" data-src="img/furnace-14-13.png">
-				<p>PATH13</p><div id="path13-temp" class="chart"></div><div id="path13-co" class="chart"></div><div id="path13-h2o" class="chart"></div><div id="path13-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-14" data-src="img/furnace-14-14.png">
-				<p>PATH14</p><div id="path14-temp" class="chart"></div><div id="path14-co" class="chart"></div><div id="path14-h2o" class="chart"></div><div id="path14-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-15" data-src="img/furnace-14-15.png">
-				<p>PATH15</p><div id="path15-temp" class="chart"></div><div id="path15-co" class="chart"></div><div id="path15-h2o" class="chart"></div><div id="path15-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-16" data-src="img/furnace-14-16.png">
-				<p>PATH16</p><div id="path16-temp" class="chart"></div><div id="path16-co" class="chart"></div><div id="path16-h2o" class="chart"></div><div id="path16-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-17" data-src="img/furnace-14-17.png">
-				<p>PATH17</p><div id="path17-temp" class="chart"></div><div id="path17-co" class="chart"></div><div id="path17-h2o" class="chart"></div><div id="path17-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-18" data-src="img/furnace-14-18.png">
-				<p>PATH18</p><div id="path18-temp" class="chart"></div><div id="path18-co" class="chart"></div><div id="path18-h2o" class="chart"></div><div id="path18-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-19" data-src="img/furnace-14-19.png">
-				<p>PATH19</p><div id="path19-temp" class="chart"></div><div id="path19-co" class="chart"></div><div id="path19-h2o" class="chart"></div><div id="path19-o2" class="chart"></div>	
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-20" data-src="img/furnace-14-20.png">
-				<p>PATH20</p><div id="path20-temp" class="chart"></div><div id="path20-co" class="chart"></div><div id="path20-h2o" class="chart"></div><div id="path20-o2" class="chart"></div>	
-			</div>
-			<hr>
 				<script>
 					var gaugeOptions = {
 						chart: {
@@ -118,7 +118,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -144,7 +147,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -170,7 +176,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -196,7 +205,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -224,7 +236,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -250,7 +265,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -276,7 +294,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -302,7 +323,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -330,7 +354,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -356,7 +383,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -382,7 +412,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -408,7 +441,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -436,7 +472,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -462,7 +501,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -488,7 +530,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -514,7 +559,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -542,7 +590,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -568,7 +619,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -594,7 +648,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -620,7 +677,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -648,7 +708,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -674,7 +737,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -700,7 +766,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -726,7 +795,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -754,7 +826,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -780,7 +855,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -806,7 +884,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -832,7 +913,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -860,7 +944,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -886,7 +973,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -912,7 +1002,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -938,7 +1031,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -966,7 +1062,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -992,7 +1091,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1018,7 +1120,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1044,7 +1149,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1072,7 +1180,10 @@
 							max: 2500,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1098,7 +1209,10 @@
 							max: 5000,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1124,7 +1238,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
@@ -1150,7 +1267,10 @@
 							max: 99.9,
 							title: {
 								text: ''
-							}
+							},
+						labels: {
+							enabled: false
+						}
 						},
 						credits: {
 							enabled: false
