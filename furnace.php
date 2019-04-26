@@ -2694,8 +2694,7 @@
 		    	var img = $('#furnace-empty');
 		    	img.attr('data-orSrc', img.attr('src'));
 		    	img.attr('src',newSrc);
-			})
-			$('.path').on('mouseleave', function() {
+			}).on('mouseleave', function() {
 		    	var img = $('#furnace-empty');
 		    	img.attr('src',img.attr('data-orSrc'));
 			});
