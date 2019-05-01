@@ -15,6 +15,7 @@ $x-large: 3em;
 $color-main: #000000;
 $color-mute: #CDD2E1;
 $color-bg: #ffffff;
+$color-highlight: #5F6370;
 $a-tags: 'a, a:active, a:hover, a:visited';
 
 body {
@@ -57,22 +58,89 @@ body {
 		
 		p {
 			font-family: $font-stack;
-			font-size: $small;
+			font-size: $medium;
 			color: $color-mute;
-			transform: rotate(-90deg);
-			margin: 3% 0 0 -5%;
 		}
 		
 		.path { //row
 			
 			&:hover {
 				cursor: pointer;
+				
+				p {
+					color: $color-highlight;
+					font-weight: bold;
+				}
 			}
+		}
 			
 			.chart {
 				height: 100px;
 				width: 15%;
 				display: inline-block;
+			}
+	}
+	
+	.left-gauges {
+		
+		p {
+			transform: rotate(-90deg);
+			margin: 0 0 0 0;
+		}
+		
+		.group {
+			
+			.group-label {
+				display: inline-block;
+				position: absolute;
+				font-size: $medium;
+				
+				&:hover {
+					cursor: pointer;
+					color: $color-highlight;
+					font-weight: bold;
+				}
+			}
+			
+			#g01 {
+				top: 25%;
+			}
+			
+			#g02 {
+				top: 74%;
+			}
+		}
+	}
+	
+	.right-gauges {
+		
+		p {
+			transform: rotate(90deg);
+			margin: 0 0 0 0;
+		}
+		
+		.group {
+			
+			.group-label {
+				display: inline-block;
+				position: absolute;
+				font-size: $medium;
+				
+				&:hover {
+					cursor: pointer;
+					color: $color-highlight;
+					font-weight: bold;
+				}
+			}
+			
+			#g03 {
+				top: 25%;
+				right: 0;
+			}
+			
+			#g04 {
+				top: 74%;
+				right: 0;
 			}
 		}
 	}

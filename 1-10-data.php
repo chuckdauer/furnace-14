@@ -1,44 +1,3 @@
-			<!-- <hr>
-			<div class="row justify-content-center path" id="path-01" data-src="img/furnace-14-01.png">
-				<p>PATH01</p><div id="path01-temp" class="chart"></div><div id="path01-co" class="chart"></div><div id="path01-h2o" class="chart"></div><div id="path01-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-02" data-src="img/furnace-14-02.png">
-				<p>PATH02</p><div id="path02-temp" class="chart"></div><div id="path02-co" class="chart"></div><div id="path02-h2o" class="chart"></div><div id="path02-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-03" data-src="img/furnace-14-03.png">
-				<p>PATH03</p><div id="path03-temp" class="chart"></div><div id="path03-co" class="chart"></div><div id="path03-h2o" class="chart"></div><div id="path03-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-04" data-src="img/furnace-14-04.png">
-				<p>PATH04</p><div id="path04-temp" class="chart"></div><div id="path04-co" class="chart"></div><div id="path04-h2o" class="chart"></div><div id="path04-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-05" data-src="img/furnace-14-05.png">
-				<p>PATH05</p><div id="path05-temp" class="chart"></div><div id="path05-co" class="chart"></div><div id="path05-h2o" class="chart"></div><div id="path05-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-06" data-src="img/furnace-14-06.png">
-				<p>PATH06</p><div id="path06-temp" class="chart"></div><div id="path06-co" class="chart"></div><div id="path06-h2o" class="chart"></div><div id="path06-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-07" data-src="img/furnace-14-07.png">
-				<p>PATH07</p><div id="path07-temp" class="chart"></div><div id="path07-co" class="chart"></div><div id="path07-h2o" class="chart"></div><div id="path07-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-08" data-src="img/furnace-14-08.png">
-				<p>PATH08</p><div id="path08-temp" class="chart"></div><div id="path08-co" class="chart"></div><div id="path08-h2o" class="chart"></div><div id="path08-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-09" data-src="img/furnace-14-09.png">
-				<p>PATH09</p><div id="path09-temp" class="chart"></div><div id="path09-co" class="chart"></div><div id="path09-h2o" class="chart"></div><div id="path09-o2" class="chart"></div>
-			</div>
-			<hr>
-			<div class="row justify-content-center path" id="path-10" data-src="img/furnace-14-10.png">
-				<p>PATH10</p><div id="path10-temp" class="chart"></div><div id="path10-co" class="chart"></div><div id="path10-h2o" class="chart"></div><div id="path10-o2" class="chart"></div>
-			</div>
-			<hr> -->
 			<?php
 				//Database to JSON
 				$servername = "localhost";
@@ -48,7 +7,7 @@
 
 				try {
 					$pdo = new PDO("mysql:dbname=$database;host=$servername", $username, $password);
-					$statement = $pdo->prepare("SELECT Path01_14CO_Concentration, Path01_14H2O_Concentration, Path01_14O2_Concentration, Path01_14TempF, Path02_14CO_Concentration, Path02_14H2O_Concentration, Path02_14O2_Concentration, Path02_14TempF, Path03_14CO_Concentration, Path03_14H2O_Concentration, Path03_14O2_Concentration, Path03_14TempF, Path04_14CO_Concentration, Path04_14H2O_Concentration, Path04_14O2_Concentration, Path04_14TempF, Path05_14CO_Concentration, Path05_14H2O_Concentration, Path05_14O2_Concentration, Path05_14TempF, Path06_14CO_Concentration, Path06_14H2O_Concentration, Path06_14O2_Concentration, Path06_14TempF, Path07_14CO_Concentration, Path07_14H2O_Concentration, Path07_14O2_Concentration, Path07_14TempF, Path08_14CO_Concentration, Path08_14H2O_Concentration, Path08_14O2_Concentration, Path08_14TempF, Path09_14CO_Concentration, Path09_14H2O_Concentration, Path09_14O2_Concentration, Path09_14TempF, Path10_14CO_Concentration, Path10_14H2O_Concentration, Path10_14O2_Concentration, Path10_14TempF FROM OPENQUERY ORDER BY id DESC LIMIT 1");
+					$statement = $pdo->prepare("SELECT Path01_14CO_Concentration, Path01_14O2_Concentration, Path01_14TempF, Path02_14CO_Concentration, Path02_14O2_Concentration, Path02_14TempF, Path03_14CO_Concentration, Path03_14O2_Concentration, Path03_14TempF, Path04_14CO_Concentration, Path04_14O2_Concentration, Path04_14TempF, Path05_14CO_Concentration, Path05_14O2_Concentration, Path05_14TempF, Path06_14CO_Concentration, Path06_14O2_Concentration, Path06_14TempF, Path07_14CO_Concentration, Path07_14O2_Concentration, Path07_14TempF, Path08_14CO_Concentration, Path08_14O2_Concentration, Path08_14TempF, Path09_14CO_Concentration, Path09_14O2_Concentration, Path09_14TempF, Path10_14CO_Concentration, Path10_14O2_Concentration, Path10_14TempF FROM OPENQUERY ORDER BY id DESC LIMIT 1");
 					$statement->execute();
 					$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 					$json = json_encode($results, JSON_NUMERIC_CHECK);
@@ -114,8 +73,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path01-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2000,
+						max: 2050,
 						title: {
 							text: ''
 						},
@@ -144,7 +103,7 @@
 				var chartTemp = Highcharts.chart('path01-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -169,40 +128,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path01-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path01_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path01-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -232,8 +162,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path02-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2000,
+						max: 2050,
 						title: {
 							text: ''
 						},
@@ -262,7 +192,7 @@
 				var chartTemp = Highcharts.chart('path02-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -287,40 +217,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path02-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path02_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path02-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -350,8 +251,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path03-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2000,
+						max: 2050,
 						title: {
 							text: ''
 						},
@@ -380,7 +281,7 @@
 				var chartTemp = Highcharts.chart('path03-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -405,40 +306,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path03-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path03_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path03-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -468,8 +340,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path04-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2300,
+						max: 2350,
 						title: {
 							text: ''
 						},
@@ -498,7 +370,7 @@
 				var chartTemp = Highcharts.chart('path04-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -523,40 +395,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path04-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path04_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path04-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -586,8 +429,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path05-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2200,
+						max: 2250,
 						title: {
 							text: ''
 						},
@@ -616,7 +459,7 @@
 				var chartTemp = Highcharts.chart('path05-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -641,40 +484,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path05-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path05_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path05-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -704,8 +518,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path06-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2200,
+						max: 2250,
 						title: {
 							text: ''
 						},
@@ -734,7 +548,7 @@
 				var chartTemp = Highcharts.chart('path06-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -759,40 +573,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path06-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path06_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path06-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -822,7 +607,7 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path07-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
+						min: 2450,
 						max: 2500,
 						title: {
 							text: ''
@@ -852,7 +637,7 @@
 				var chartTemp = Highcharts.chart('path07-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -877,40 +662,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path07-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path07_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path07-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 2.9,
+						max: 3.1,
 						title: {
 							text: ''
 						},
@@ -940,8 +696,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path08-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2300,
+						max: 2350,
 						title: {
 							text: ''
 						},
@@ -970,7 +726,7 @@
 				var chartTemp = Highcharts.chart('path08-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -995,40 +751,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path08-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path08_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path08-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 2.4,
+						max: 2.6,
 						title: {
 							text: ''
 						},
@@ -1058,8 +785,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path09-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2300,
+						max: 2350,
 						title: {
 							text: ''
 						},
@@ -1088,7 +815,7 @@
 				var chartTemp = Highcharts.chart('path09-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
 						min: 0,
-						max: 5000,
+						max: 0,
 						title: {
 							text: ''
 						},
@@ -1113,40 +840,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path09-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path09_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path09-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 1.9,
+						max: 2.1,
 						title: {
 							text: ''
 						},
@@ -1176,8 +874,8 @@
 				// temp gauge
 				var chartTemp = Highcharts.chart('path10-temp', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 2500,
+						min: 2350,
+						max: 2400,
 						title: {
 							text: ''
 						},
@@ -1205,8 +903,8 @@
 				// co gauge
 				var chartTemp = Highcharts.chart('path10-co', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 5000,
+						min: 2500,
+						max: 3500,
 						title: {
 							text: ''
 						},
@@ -1231,40 +929,11 @@
 					}]
 				}));
 				// co gauge
-				// h2o gauge
-				var chartTemp = Highcharts.chart('path10-h2o', Highcharts.merge(gaugeOptions, {
-					yAxis: {
-						min: 0,
-						max: 99.9,
-						title: {
-							text: ''
-						},
-						labels: {
-							enabled: false
-						}
-					},
-					credits: {
-						enabled: false
-					},
-					series: [{
-						name: 'H2O',
-						data: [<?php echo $data[0][Path10_14H2O_Concentration]; ?>],
-						dataLabels: {
-							align: 'center',
-							verticalAlign: 'bottom',
-							floating: 'true',
-							y: 10,
-							format: '<div class="gauge-value" style="text-align: center; font-size: 1em; line-height: 3.5em; color: #555;">' + '{y}' + '</div>' + '<br>' +
-								'<div class="gauge-label" style="text-align: center; font-size: 1em; color: #333;">' + 'H2O (%)' + '</div>'
-						}
-					}]
-				}));
-				// h2o gauge
 				// o2 gauge
 				var chartTemp = Highcharts.chart('path10-o2', Highcharts.merge(gaugeOptions, {
 					yAxis: {
-						min: 0,
-						max: 99.9,
+						min: 6.9,
+						max: 7.1,
 						title: {
 							text: ''
 						},

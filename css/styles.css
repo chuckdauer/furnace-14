@@ -28,16 +28,49 @@ a, a:active, a:hover, a:visited {
   text-align: center; }
 .gauges-furnace .gauges p {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.75em;
-  color: #CDD2E1;
-  transform: rotate(-90deg);
-  margin: 3% 0 0 -5%; }
+  font-size: 1em;
+  color: #CDD2E1; }
 .gauges-furnace .gauges .path:hover {
   cursor: pointer; }
-.gauges-furnace .gauges .path .chart {
+  .gauges-furnace .gauges .path:hover p {
+    color: #5F6370;
+    font-weight: bold; }
+.gauges-furnace .gauges .chart {
   height: 100px;
   width: 15%;
   display: inline-block; }
+.gauges-furnace .left-gauges p {
+  transform: rotate(-90deg);
+  margin: 0 0 0 0; }
+.gauges-furnace .left-gauges .group .group-label {
+  display: inline-block;
+  position: absolute;
+  font-size: 1em; }
+  .gauges-furnace .left-gauges .group .group-label:hover {
+    cursor: pointer;
+    color: #5F6370;
+    font-weight: bold; }
+.gauges-furnace .left-gauges .group #g01 {
+  top: 25%; }
+.gauges-furnace .left-gauges .group #g02 {
+  top: 74%; }
+.gauges-furnace .right-gauges p {
+  transform: rotate(90deg);
+  margin: 0 0 0 0; }
+.gauges-furnace .right-gauges .group .group-label {
+  display: inline-block;
+  position: absolute;
+  font-size: 1em; }
+  .gauges-furnace .right-gauges .group .group-label:hover {
+    cursor: pointer;
+    color: #5F6370;
+    font-weight: bold; }
+.gauges-furnace .right-gauges .group #g03 {
+  top: 25%;
+  right: 0; }
+.gauges-furnace .right-gauges .group #g04 {
+  top: 74%;
+  right: 0; }
 .gauges-furnace .furnace #furnace14 .figure-caption {
   position: absolute;
   top: 100%;
